@@ -97,7 +97,8 @@ def Weights(All,MST):
     AllLen = MSTLen = 0
     for item1 in All: 
         AllLen += item1[0]
-    for item2 in MST: 
+    for item2 in MST[0]:
+        print(type(item2),item2)
         MSTLen += item2[0]
     print("Total length of all paths = ",AllLen)
     print("Total Length of MST paths = ",MSTLen)
@@ -125,8 +126,9 @@ InputList = MatToUTList(InputMatrix,N)                  # Turns input matrix int
 Joined = CreateTuple(InputList, N)                      # Pairs the upper triangular list with letter pairs
 Sorted = CombinedListSort(Joined)                       # Sorts the combined list
 Output = MinimumSpanningTree(Sorted,N)
-Weights.Output
-Map.GenerateGraph(Sorted,Output)
+Weights(Sorted,Output)
+print(Output)
+#Map.GenerateGraph(Sorted,Output)
 #print("\n\n", MinimumSpanningTree(Sorted,N))
 #Debug(Sorted)
 
