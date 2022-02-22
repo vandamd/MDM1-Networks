@@ -1,6 +1,6 @@
 import numpy as np
 import Generator as G
-#import Graph_Generator as Map
+import Graph_Generator as Map
 import math as m
 
 def RandMatGen (N):
@@ -127,8 +127,8 @@ Joined = CreateTuple(InputList, N)                      # Pairs the upper triang
 Sorted = CombinedListSort(Joined)                       # Sorts the combined list
 Output = MinimumSpanningTree(Sorted,N)
 Weights(Sorted,Output)
-print(Output)
-#Map.GenerateGraph(Sorted,Output)
+#print(Output)
+Map.GenerateGraph(Sorted,Output)
 #print("\n\n", MinimumSpanningTree(Sorted,N))
 #Debug(Sorted)
 
