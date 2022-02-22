@@ -127,7 +127,7 @@ Sorted = CombinedListSort(Joined)                       # Sorts the combined lis
 Output = MinimumSpanningTree(Sorted,N)
 Weights.Output
 Map.GenerateGraph(Sorted,Output)
-print("\n\n", MinimumSpanningTree(Sorted,N))
+#print("\n\n", MinimumSpanningTree(Sorted,N))
 #Debug(Sorted)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~
