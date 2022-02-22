@@ -89,7 +89,7 @@ def MinimumSpanningTree(Sorted,N):                        # Sorted: list of path
         else:
             Divisions[Merging[0]].extend(Divisions[Merging[1]])
             Divisions.remove(Divisions[Merging[1]])
-    return(CorrectPaths, len(CorrectPaths))
+    return(CorrectPaths)
             
             
             
@@ -97,19 +97,13 @@ def Weights(All,MST):
     AllLen = MSTLen = 0
     for item1 in All: 
         AllLen += item1[0]
-    for item2 in MST[0]:
+    for item2 in MST:
         print(type(item2),item2)
         MSTLen += item2[0]
     print("Total length of all paths = ",AllLen)
     print("Total Length of MST paths = ",MSTLen)
     
-        
-            
 
-            
-        
-                    
-    
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~ Temporary Value Assignment ~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,8 +121,7 @@ Joined = CreateTuple(InputList, N)                      # Pairs the upper triang
 Sorted = CombinedListSort(Joined)                       # Sorts the combined list
 Output = MinimumSpanningTree(Sorted,N)
 Weights(Sorted,Output)
-#print(Output)
-Map.GenerateGraph(Sorted,Output)
+Map.GenerateGraph(Output)
 #print("\n\n", MinimumSpanningTree(Sorted,N))
 #Debug(Sorted)
 
