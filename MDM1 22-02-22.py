@@ -1,6 +1,6 @@
 import numpy as np
 import Generator as G
-import Graph_Generator as Map
+#import Graph_Generator as Map
 import math as m
 
 def RandMatGen (N):
@@ -41,14 +41,14 @@ def CombinedListSort(ProcessingList):
 
     
                 
-def MemberCheck(TestSet, Letters):
+def MemberCheck(TestSet, Letters):                      # 
     First  = 0
     Second = 0
     Returns = ""
     if Letters[0] in TestSet:
          First = True
          Returns = Letters[0]
-    if Letters[1] in TestSet:
+    if Letters[1] in TestSet:                           
          Second = True
          Returns = Letters[1]
     if First == Second == True:
@@ -70,7 +70,7 @@ def MinimumSpanningTree(Sorted,N):                        # Sorted: list of path
             Divisions.append([TestLetters[0],TestLetters[1]])
             CorrectPaths.append(item)                   # Shortest path is always part of MST
             continue
-        for index,subset in enumerate(Divisions):
+        for index,subset in enumerate(Divisions):       
             FoundLetter = MemberCheck(subset,TestLetters)
             if FoundLetter == "none":
                 PathLoop = True
@@ -93,7 +93,16 @@ def MinimumSpanningTree(Sorted,N):                        # Sorted: list of path
             
             
             
-            
+def Weights(All,MST):
+    AllLen = MSTLen = 0
+    for item1 in All: 
+        AllLen += item1[0]
+    for item2 in MST: 
+        MSTLen += item2[0]
+    print("Total length of all paths = ",AllLen)
+    print("Total Length of MST paths = ",MSTLen)
+    
+        
             
 
             
@@ -115,8 +124,10 @@ InputMatrix = RandMatGen(N)                             # Makes the input matrix
 InputList = MatToUTList(InputMatrix,N)                  # Turns input matrix into an upper triangular list
 Joined = CreateTuple(InputList, N)                      # Pairs the upper triangular list with letter pairs
 Sorted = CombinedListSort(Joined)                       # Sorts the combined list
-Map.GenerateGraph(MinimumSpanningTree(Sorted,N))
-#print("\n\n", MinimumSpanningTree(Sorted,N))
+Output = MinimumSpanningTree(Sorted,N)
+Weights.Output
+Map.GenerateGraph(Sorted,Output)
+print("\n\n", MinimumSpanningTree(Sorted,N))
 #Debug(Sorted)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~
