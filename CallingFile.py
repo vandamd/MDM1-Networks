@@ -7,7 +7,9 @@ Created on Thu Feb 24 19:36:16 2022
 
 import MDM1_Kruskals as Kr
 import MDM1_Primms as Pr
-import Graph_Generator as G
+#import Graph_Generator as G
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import minimum_spanning_tree
 
 """
 The layout of this file is such that....
@@ -41,3 +43,6 @@ Pr.Primms(InputMatrix,N)
 print("\nKruskals:")
 Kr.Kruskals(InputMatrix,N)
 #################################################
+X = csr_matrix(InputMatrix)
+Tcsr = minimum_spanning_tree(X)
+print("\nCorrectness Check\n",Tcsr)
