@@ -35,7 +35,7 @@ def GenerateGraph(Connections, coords):
 
     edges = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] >= 0]
 
-    plt.figure(figsize=(12,16))
+    plt.figure(figsize=(15,18))
     ########################################################################################
     
     
@@ -51,7 +51,7 @@ def GenerateGraph(Connections, coords):
     nx.draw_networkx_nodes(G, locations, node_color='k', node_size=700)
     nx.draw_networkx_nodes(G, locations, nodelist=['A'], node_size=700, node_color='r')
     nx.draw_networkx_edges(G, locations, edgelist=edges, width=6, edge_color='k', style='solid')
-    nx.draw_networkx_edge_labels(G, locations, edge_labels=labels, font_size=10, verticalalignment='center', horizontalalignment='center')
+    nx.draw_networkx_edge_labels(G, locations, edge_labels=labels, font_size=16, verticalalignment='center', horizontalalignment='center')
     ########################################################################################
     
     
