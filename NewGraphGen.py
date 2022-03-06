@@ -49,6 +49,7 @@ def GenerateGraph(Connections, coords):
     labels = WeightDict
     nx.draw_networkx_labels(G, locations, font_color='w', font_size=15, font_family='sans-serif')
     nx.draw_networkx_nodes(G, locations, node_color='k', node_size=700)
+    nx.draw_networkx_nodes(G, locations, nodelist=['A'], node_size=700, node_color='r')
     nx.draw_networkx_edges(G, locations, edgelist=edges, width=6, edge_color='k', style='solid')
     nx.draw_networkx_edge_labels(G, locations, edge_labels=labels, font_size=10, verticalalignment='center', horizontalalignment='center')
     ########################################################################################
