@@ -5,9 +5,11 @@ Created on Thu Feb 24 19:36:16 2022
 @author: Mahatma
 """
 
+from ast import In
 import MDM1_Kruskals as Kr
 import MDM1_Primms as Pr
-#import Graph_Generator as G
+import coordinatesToDistance as Dm
+import NewGraphGen as G
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import minimum_spanning_tree
 
@@ -21,9 +23,8 @@ The layout of this file is such that....
 
 
 ######### Matrix Generation Size Input ##########
-N = 5
+N = 24
 #################################################
-
 
 
 ######### Graphing Version ######################
@@ -35,14 +36,23 @@ N = 5
 #################################################
 
 
+## Testing Version for CASE STUDY ##
 
-######### Testing Version #######################
-InputMatrix = Kr.RandMatGen(N)
+# MATRIX INPUT
+#InputMatrix = Kr.RandMatGen(N)
+InputMatrix = Dm.distanceMatrix
+
+# PRIM'S 
 print("\nPrimms:")
-Pr.Primms(InputMatrix,N)
+#Pr.Primms(InputMatrix,N)
+G.GenerateGraph(Pr.Primms(InputMatrix,N), Dm.coordinates)
+
+# KRUSKAL'S
 print("\nKruskals:")
-Kr.Kruskals(InputMatrix,N)
-#################################################
+#Kr.Kruskals(InputMatrix,N)
+G.GenerateGraph(Kr.Kruskals(InputMatrix,N), Dm.coordinates)
+
+# CHECK
 X = csr_matrix(InputMatrix)
 Tcsr = minimum_spanning_tree(X)
 print("\nCorrectness Check\n",Tcsr)
