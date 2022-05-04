@@ -5,16 +5,11 @@ Created on Thu Feb 24 19:36:16 2022
 @author: Mahatma
 """
 
-<<<<<<< HEAD:CallingFile.py
-import MDM1_Kruskals as Kr
-import MDM1_Primms as Pr
-=======
 from ast import In
 import Kruskals as Kr
 import Primms as Pr
->>>>>>> fc32722949b685b429c883436200ef36445a607b:main.py
 import coordinatesToDistance as Dm
-import GraphGen as G
+import graphGen as G
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import minimum_spanning_tree
 
