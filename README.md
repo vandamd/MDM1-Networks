@@ -18,4 +18,4 @@ The goals of this report were to:
 The report should be accessible to a scientifically literate person with no particular expertise in the topic which we discuss.
 
 ### Report and Feedback
-The report can be found [here](/MDM1 REP2.pdf) and the feedback we recieved can be found [here](/MDM1 REP2 Feedback.pdf)
+The report can be found [here](MDM1%20REP2.pdf) and the feedback we recieved can be found [here](MDM1%20REP2%20Feedback.pdf)
